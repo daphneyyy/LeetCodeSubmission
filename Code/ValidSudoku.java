@@ -10,11 +10,11 @@
 class Solution {
     private static final int SIZE = 9;
     private static final int FACTOR = 3;
-    
+
     public boolean isValidSudoku(char[][] board) {
         return (checkCol(board) && checkRow(board)) && check3by3(board);
     }
-    
+
     public boolean checkRow(char[][] board) {
         for (int row = 0; row < SIZE; row++) {
             boolean[] checker = new boolean[SIZE];
@@ -48,11 +48,11 @@ class Solution {
     }
 
     public boolean check3by3(char[][] board) {
-        for (int row = 3; row < SIZE + 3; row+=3) {
-            for (int col = 3; col < SIZE + 3; col+=3) {
+        for (int row = FACTOR; row < SIZE + FACTOR; row += FACTOR) {
+            for (int col = FACTOR; col < SIZE + FACTOR; col += FACTOR) {
                 boolean[] checker = new boolean[SIZE];
-                for (int r = row - 3; r < row; r++) {
-                    for (int c = col - 3; c < col; c++) {
+                for (int r = row - FACTOR; r < row; r++) {
+                    for (int c = col - FACTOR; c < col; c++) {
                         if (board[r][c] != ".".charAt(0)) {
                             if (checker[Integer.parseInt(String.valueOf(board[r][c])) - 1]) {
                                 return false;
