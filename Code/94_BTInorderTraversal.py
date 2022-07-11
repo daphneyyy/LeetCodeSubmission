@@ -10,16 +10,14 @@
 #         self.right = right
 class Solution(object):
 
-        
     def inorderTraversal(self, root):
         """
         :type root: TreeNode
         :rtype: List[int]
         """
-        def inorderHelper(node):
-            if node == None:
-                return []
-            return inorderHelper(node.left) + [node.val] + inorderHelper(node.right)
-        return inorderHelper(root)
-    
-        
+        if root == None:
+            return []
+        return (
+            self.inorderTraversal(root.left) + [root.val] +
+            self.inorderTraversal(root.right)
+        )
