@@ -17,7 +17,8 @@ class Solution(object):
         :type k: int
         :rtype: List[List[int]]
         """
+        if k == 0:
+            return []
         res = []
         self.com_helper(res, 1, [], n, k)
         return res
-        
