@@ -27,8 +27,6 @@ class Solution(object):
         :type n: int
         :rtype: List[List[int]]
         """
-        if k > n:
-            return []
         queue = []
         res = []
         self.backtrack(queue, 1, res, k, n)
