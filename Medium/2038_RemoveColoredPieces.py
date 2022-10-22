@@ -19,4 +19,4 @@ class Solution(object):
         Bs = [len(i)-2 for i in re.findall("B+", colors) if len(i) > 2]
         A_max = sum(As)
         B_max = sum(Bs)
-        return A_max > 0 and A_max > B_max
+        return A_max > B_max
