@@ -4,4 +4,8 @@
 -- They must use a score that is in the Exam table.
 -- Write an SQL query to report the minimum score requirement for each school. If there are multiple score values satisfying the above conditions, choose the smallest one. If the input data is not enough to determine the score, report -1.
 -- Return the result table in any order.
-
+select s.school_id,
+    ifnull(min(score), -1) as score
+from Schools s
+    left join Exam e on e.student_count <= s.capacity
+group by school_id
