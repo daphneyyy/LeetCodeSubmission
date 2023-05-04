@@ -1,0 +1,1 @@
+-- Write an SQL query to report the nth highest salary from the Employee table. If there is no nth highest salary, the query should report null.
